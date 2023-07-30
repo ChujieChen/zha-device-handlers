@@ -351,7 +351,7 @@ class TuyaManufCluster(CustomCluster):
 
     server_commands = {
         0x0000: foundation.ZCLCommandDef(
-            "set_data", {"param": Command}, False, is_manufacturer_specific=True
+            "set_data", {"param": Command}, False, is_manufacturer_specific=False #True
         ),
         0x0010: foundation.ZCLCommandDef(
             "mcu_version_req",
@@ -1481,7 +1481,7 @@ class TuyaNewManufCluster(CustomCluster):
 
     server_commands = {
         TUYA_SET_DATA: foundation.ZCLCommandDef(
-            "set_data", {"data": TuyaCommand}, False, is_manufacturer_specific=True
+            "set_data", {"data": TuyaCommand}, False, is_manufacturer_specific=False #True
         ),
         TUYA_SEND_DATA: foundation.ZCLCommandDef(
             "send_data", {"data": TuyaCommand}, False, is_manufacturer_specific=True
